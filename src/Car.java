@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class Car extends Part {
     Random rng = new Random();
-    public int getValue() {
+    public double getValue() {
         return value;
     }
 
@@ -97,14 +97,12 @@ public class Car extends Part {
         boolean tmpIsCargo = rng.nextBoolean();
         Part p1 = new Part();
         ArrayList<Part> tmpPartsSet = p1.generateParts();
-        PartsSetToString(tmpPartsSet);
 
         return new Car(tmpValue, tmpBrand, tmpMileage, tmpColor, tmpType, tmpIsCargo, tmpPartsSet);
     }
 
 
     public void carToString(Car car){
-        System.out.println();
         System.out.println("Wartość pojazdu: " + car.value);
         System.out.println("Przebieg pojazdu: " + car.mileage);
         System.out.println("Marka pojazdu: " + car.brand);
