@@ -27,7 +27,7 @@ public class ClientsBase extends Clients {
             for (int i = 0; i < clientsBase.size(); i++) {
                 System.out.println();
                 System.out.println("Klient nr " + (i + 1));
-                clientsBase.get(i).carToString(clientsBase.get(i));
+                clientsBase.get(i).clientToString(clientsBase.get(i));
             }
         }
 

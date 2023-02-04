@@ -17,6 +17,7 @@ public class Player extends ClientsBase{
         car.value -= (car.value* 0.02) - wash;  // sprzedaz z 2% podatkiem i myjką
         System.out.println("Sprzedano auto " + car.brand + " za " + car.value);
         Cash += car.value;
+        ownedCars.remove(car);
         clientsSoldCar++;
     }
     ArrayList<Car> ownedCars = new ArrayList<>();
