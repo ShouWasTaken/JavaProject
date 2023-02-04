@@ -23,4 +23,11 @@ public class CarBase {
             carsBase.get(i).carToString(carsBase.get(i));
         }
     }
+    public void CarBaseToString(ArrayList<Car> AL){
+        for (int i = 0; i < AL.size(); i++) {
+            System.out.println();
+            System.out.println("Pojazd nr " + (i + 1));
+            AL.get(i).carToString(AL.get(i));
+        }
+    }
 }

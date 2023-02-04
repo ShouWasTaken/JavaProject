@@ -3,6 +3,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Clients extends Car{
+
     int Cash;
     String[] preferredBrands;
     boolean buysBroken;
