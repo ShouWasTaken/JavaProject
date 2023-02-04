@@ -3,13 +3,9 @@ public class Main {
 
         Player player = new Player();
         Part tmpPart = new Part();
+        Clients tmpClient = new Clients();
+        tmpClient = tmpClient.GenerateClient();
+        tmpClient.clientToString(tmpClient);
 
-        Car testCar = new Car();
-        testCar = testCar.GenerateCar();
-        testCar.carToString(testCar);
-
-        tmpPart.RepairPartAdrian(player, testCar,"Hamulec");
-        testCar.carToString(testCar);
-        System.out.println(player.Cash);
     }
 }

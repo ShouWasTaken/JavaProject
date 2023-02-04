@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class CarBase {
+
     Random rng = new Random();
     ArrayList<Car> carsBase = new ArrayList<>();
 
