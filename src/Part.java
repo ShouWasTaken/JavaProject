@@ -7,7 +7,7 @@ public class Part extends Mechanic {
     String partName;
     public ArrayList<Part> partsSet = new ArrayList<>();
     int durability;
-     boolean working;
+     boolean working = true;
 
     public Part(String partName, boolean working) {
         this.partName = partName;
@@ -15,7 +15,6 @@ public class Part extends Mechanic {
     }
 
     public Part(){
-
     }
     public  ArrayList<Part> generateParts(){
 

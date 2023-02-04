@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Player extends ClientsBase{
 
 
-    public int Cash = 500000;
+    public int StartingCash = 500000;
+    public int Cash = 0;
     int wash = 10;
 
 
@@ -12,12 +13,12 @@ public class Player extends ClientsBase{
     System.out.println("Zakupiono auto " + car.brand + " za " + car.value);
     sumWash.add(wash);
     ownedCars.add(car);
-    Cash -= car.value;
+    Cash = StartingCash - car.value;
     }
     public void sellCar(Car car){
         car.value -= (car.value* 0.02) - wash;  // sprzedaz z 2% podatkiem i myjką
         System.out.println("Sprzedano auto " + car.brand + " za " + car.value);
-        Cash += car.value;
+        Cash = StartingCash + car.value;
         ownedCars.remove(car);
     }
 

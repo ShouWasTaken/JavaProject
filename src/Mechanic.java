@@ -4,6 +4,7 @@ public class Mechanic {
     Random rng = new Random();
 
     public void RepairSpecificPart(Part part) {
+        if(part.working == false)
         part.working = true;
     }
 
@@ -15,7 +16,7 @@ public class Mechanic {
         switch (partName) {
             case "Hamulec":
                 RepairSpecificPart(car.getPartsSet().get(0));
-                player.Cash -= 2500;
+                player.Cash = player.StartingCash - 2500;
                 car.value += car.value * 0.1;
                 break;
             case "Zawieszenie":
@@ -25,17 +26,17 @@ public class Mechanic {
                 break;
             case "Silnik":
                 RepairSpecificPart(car.getPartsSet().get(2));
-                player.Cash -= 10000;
+                player.Cash = player.StartingCash - 10000;
                 car.value += car.value;
                 break;
             case "Karoseria":
                 RepairSpecificPart(car.getPartsSet().get(3));
-                player.Cash -=  7500;
+                player.Cash = player.StartingCash -  7500;
                 car.value += car.value * 0.5;
                 break;
             case "Skrzynia biegów":
                 RepairSpecificPart(car.getPartsSet().get(4));
-                player.Cash -=  4500;
+                player.Cash = player.StartingCash -  4500;
                 car.value += car.value * 0.5;
                 break;
             default:
@@ -46,7 +47,7 @@ public class Mechanic {
 
     public void RepairPartJanusz(Player player, Car car, String partName) {
         RepairPart(player, car, partName);
-        player.Cash -= player.Cash * 0.5;
+        player.Cash = (int) (player.StartingCash - (player.StartingCash * 0.5));
     }
 
     public void RepairPartMarian(Player player, Car car, String partName) {
@@ -56,7 +57,7 @@ public class Mechanic {
             RepairPartJanusz(player, car, partName);
         } else {
             RepairPart(player, car, partName);
-            player.Cash -= player.Cash * 0.3;
+            player.Cash = (int) (player.StartingCash - (player.StartingCash * 0.3));
         }
     }
 
@@ -72,7 +73,7 @@ public class Mechanic {
         }
              else {
                 RepairPart(player, car, partName);
-                player.Cash -= player.Cash * 0.1;
+                player.Cash = (int) (player.StartingCash - (player.StartingCash * 0.1));
             }
             }
         }
