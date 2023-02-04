@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Player extends ClientsBase{
-    int clientsSoldCar = 0;
+
 
     public int Cash = 500000;
     int wash = 10;
@@ -18,7 +18,8 @@ public class Player extends ClientsBase{
         System.out.println("Sprzedano auto " + car.brand + " za " + car.value);
         Cash += car.value;
         ownedCars.remove(car);
-        clientsSoldCar++;
     }
+
+
     ArrayList<Car> ownedCars = new ArrayList<>();
 }
