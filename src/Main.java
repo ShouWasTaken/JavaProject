@@ -8,11 +8,8 @@ public class Main {
         testCar = testCar.GenerateCar();
         testCar.carToString(testCar);
 
-        tmpPart.RepairPart(player, testCar,"Hamulec");
-        tmpPart.RepairPart(player, testCar,"Zawieszenie");
-        tmpPart.RepairPart(player, testCar,"Silnik");
-        tmpPart.RepairPart(player, testCar,"Karoseria");
-        tmpPart.RepairPart(player, testCar,"Skrzynia biegów");
+        tmpPart.RepairPartAdrian(player, testCar,"Hamulec");
         testCar.carToString(testCar);
+        System.out.println(player.Cash);
     }
 }
