@@ -15,27 +15,27 @@ public class Mechanic {
         switch (partName) {
             case "Hamulec":
                 RepairSpecificPart(car.getPartsSet().get(0));
-                player.Cash = player.Cash - 2500;
+                player.Cash -= 2500;
                 car.value += car.value * 0.1;
                 break;
             case "Zawieszenie":
                 RepairSpecificPart(car.getPartsSet().get(1));
-                player.Cash = player.Cash - 6000;
+                player.Cash -= 6000;
                 car.value += car.value * 0.2;
                 break;
             case "Silnik":
                 RepairSpecificPart(car.getPartsSet().get(2));
-                player.Cash = player.Cash - 10000;
+                player.Cash -= 10000;
                 car.value += car.value;
                 break;
             case "Karoseria":
                 RepairSpecificPart(car.getPartsSet().get(3));
-                player.Cash = player.Cash - 7500;
+                player.Cash -=  7500;
                 car.value += car.value * 0.5;
                 break;
             case "Skrzynia biegów":
                 RepairSpecificPart(car.getPartsSet().get(4));
-                player.Cash = player.Cash - 4500;
+                player.Cash -=  4500;
                 car.value += car.value * 0.5;
                 break;
             default:
@@ -64,7 +64,7 @@ public class Mechanic {
         int random = rng.nextInt(100);
         if (random <= 20) {
             System.out.println("Nie udało się naprawić samochodu");
-        } else if (random <= 80) {
+        } else if (random <= 22) {
            random = rng.nextInt(5);
            if (car.getPartsSet().get(random).working == true){
            BreakSpecificPart(car.getPartsSet().get(random));

@@ -2,62 +2,12 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Car extends Part {
-    Random rng = new Random();
-    public double getValue() {
-        return value;
-    }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public int getMileage() {
-        return mileage;
-    }
-
-    public void setMileage(int mileage) {
-        this.mileage = mileage;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public boolean isCargo() {
-        return isCargo;
-    }
-
-    public void setCargo(boolean cargo) {
-        isCargo = cargo;
-    }
 
     public ArrayList<Part> getPartsSet() {
         return partsSet;
     }
 
-    public void setPartsSet(ArrayList<Part> partsSet) {
-        this.partsSet = partsSet;
-    }
 
 
     int value;
@@ -70,6 +20,8 @@ public class Car extends Part {
     String type;
     boolean isCargo;
     ArrayList<Part> partsSet = new ArrayList<>();
+    ArrayList<String> repairs = new ArrayList<>();
+
 
 
     public Car(int value, String brand, int mileage, String color, String type, boolean isCargo, ArrayList<Part> partsSet){
