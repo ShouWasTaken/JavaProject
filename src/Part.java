@@ -7,7 +7,7 @@ public class Part extends Mechanic {
     String partName;
     public ArrayList<Part> partsSet = new ArrayList<>();
     int durability;
-     boolean working = true;
+     boolean working;
 
     public Part(String partName, boolean working) {
         this.partName = partName;
@@ -22,7 +22,7 @@ public class Part extends Mechanic {
 
             durability = rng.nextInt(100);
 
-            if(durability<50)
+            if(durability<35)
                 working = false;
             else
                 working = true;

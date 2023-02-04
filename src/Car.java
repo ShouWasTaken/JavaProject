@@ -14,7 +14,7 @@ public class Car extends Part {
     String[] brandsList = {"Audi", "Volkswagen", "Fiat", "Polonez"};
     String brand;
     int mileage;
-    String[] colorList = {"Czerwony", "Niebieski", "Biały", "Zielony", "Policyjny"};
+    String[] colorList = {"Czerwony", "Niebieski", "Biały", "Zielony", "Czarny"};
     String color;
     String[] typeList = {"Premium", "Standard", "Budget"};
     String type;
@@ -40,7 +40,7 @@ public class Car extends Part {
 
     public Car GenerateCar(){
         Random rng = new Random();
-        int tmpValue = rng.nextInt(98000)+2000;
+        int tmpValue = rng.nextInt(50000)+2000;
         int tmpMileage = rng.nextInt(650000);
         String tmpBrand = brandsList[rng.nextInt(brandsList.length)];
         String tmpColor = colorList[rng.nextInt(colorList.length)];

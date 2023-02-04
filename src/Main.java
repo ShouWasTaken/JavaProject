@@ -59,8 +59,14 @@ public class Main {
                             int carToRepair = scanner.nextInt() - 1;
                             player.ownedCars.get(carToRepair);
                             System.out.println("Jaką część chcesz naprawić");
-                            String partToRepair = scanner.next();
+                            scanner.nextLine();
+                            String partToRepair = scanner.nextLine();
                             Part part = new Part();
+                            for (Part tmpPart:
+                                    player.ownedCars.get(carToRepair).getPartsSet()) {
+                                if(tmpPart.partName.equals(partToRepair))
+                                    part=tmpPart;
+                            }
                             if (part.working == false) {
                                 System.out.println("Wybierz mechanika do naprawy:");
                                 System.out.println("1.Janusz");
@@ -72,20 +78,20 @@ public class Main {
                                     if (choosingMechanic == 1) {
                                         part.RepairPartJanusz(player, player.ownedCars.get(carToRepair), partToRepair);
                                         player.ownedCars.get(carToRepair).repairs.add(partToRepair);
-                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + player.Cash);
-                                        player.sumRepair.add(player.Cash);
+                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + part.repairCost);
+                                        player.sumRepair.add(part.repairCost);
                                         moves++;
                                     } else if (choosingMechanic == 2) {
                                         part.RepairPartMarian(player, player.ownedCars.get(carToRepair), partToRepair);
                                         player.ownedCars.get(carToRepair).repairs.add(partToRepair);
-                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + player.Cash);
-                                        player.sumRepair.add(player.Cash);
+                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + part.repairCost);
+                                        player.sumRepair.add(part.repairCost);
                                         moves++;
                                     } else {
                                         part.RepairPartAdrian(player, player.ownedCars.get(carToRepair), partToRepair);
                                         player.ownedCars.get(carToRepair).repairs.add(partToRepair);
-                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + player.Cash);
-                                        player.sumRepair.add(player.Cash);
+                                        player.transactions.add("Naprawiono " + partToRepair + " w aucie " + player.ownedCars.get(carToRepair).brand + " za " + part.repairCost);
+                                        player.sumRepair.add(part.repairCost);
                                         moves++;
                                     }
 
@@ -166,13 +172,13 @@ public class Main {
                                 int numberOfClients = rng.nextInt(4) + 1;
                                 clientsBase.AddClientsToBase(numberOfClients);
                                 System.out.println("Po zakupie reklamy w gaziecie doszło " + numberOfClients + " klientów");
-                                player.Cash = player.StartingCash - 7500;
+                                player.Cash -=  7500;
                                 moves++;
                                 player.transactions.add("Zakupiono reklamę za kwotę 7500");
                             } else {
                                 clientsBase.AddClientsToBase(1);
                                 System.out.println("Po zakupieniu reklamy internetowej doszedł jeden dodatkowy klient");
-                                player.Cash = player.StartingCash - 2000;
+                                player.Cash -=  2000;
                                 moves++;
                                 player.transactions.add("Zakupiono reklamę za kwotę 2000");
                             }
@@ -236,9 +242,9 @@ public class Main {
             }
 
 
-        } while (player.Cash < player.StartingCash * 2);{
-            if (player.Cash >= 2 * player.StartingCash) {
-                System.out.println("Gratulacje, wygrales grę");
+        } while (player.Cash < player.winCondition);{
+            if (player.Cash >= player.winCondition) {
+                System.out.println("Gratulacje, wygrales grę w liczbie kroków " + moves);
             }
 
         }

@@ -24,7 +24,7 @@ public class Clients extends Car{
     public Clients GenerateClient(){
         ArrayList<String> brand = new ArrayList<>(Arrays.asList(brandsList));
         Random rng = new Random();
-        int tmpCash = rng.nextInt(650000)+200000;
+        int tmpCash = rng.nextInt(70000)+20000;
         String[] tmpPreferredBrands = new String[2];
         for(int i = 0; i< 2; i++){
            int brandIndex = rng.nextInt(brand.size());
